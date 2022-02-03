@@ -11,14 +11,21 @@ const NavBar = () => {
         </div>
 
         <div className="nav-links-area">
-          <a className="nav-link">Home</a>
-          <a className="nav-link">Menu</a>
-          <a to="/Passport" className="nav-link">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+
+          <Link to="/Menu" className="nav-link">
+            Menu
+          </Link>
+
+          <Link to="/Passport" className="nav-link">
             Passport
-          </a>
-          <a to="/Suitcase" className="nav-link">
+          </Link>
+
+          <Link to="/Suitcase" className="nav-link">
             Suitcase
-          </a>
+          </Link>
         </div>
       </div>
     </>

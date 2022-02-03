@@ -3,15 +3,15 @@ import "../Styles/Nav.css";
 import NavBar from "./NavBar";
 
 // Will change, need links to load primarily
-const Passport = () => {
+const Home = () => {
   return (
     <>
       <NavBar />
-      <div className="passport-page">
-        <h1 className="passport-header">Passport</h1>
+      <div className="home-page">
+        <h1 className="home-header">Home</h1>
       </div>
     </>
   );
 };
 
-export default Passport;
+export default Home;

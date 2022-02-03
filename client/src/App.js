@@ -1,7 +1,6 @@
 // import React, { useState, useEffect } from "react";
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Styles/Nav.css";
 
 import NavBar from "./Components/NavBar";
@@ -13,93 +12,54 @@ import Suitcase from "./Components/Suitcase";
 // import { getAllProfiles } from "./services/profileService";
 
 function App() {
-  // const [profiles, setProfiles] = useState(null);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <NavBar />
+            </>
+          }
+        ></Route>
 
-  // useEffect(() => {
-  //   async function getProfiles() {
-  //     if (!profiles) {
-  //       const response = await getAllProfiles();
-  //       setProfiles(response);
-  //     }
-  //   }
+        <Route
+          exact
+          path="/Menu"
+          render={() => (
+            <>
+              <NavBar />
+              <Menu />
+            </>
+          )}
+        ></Route>
 
-  //   getProfiles();
-  // }, [profiles]);
+        <Route
+          exact
+          path="/Passport"
+          render={() => (
+            <>
+              <NavBar />
+              <Passport />
+            </>
+          )}
+        ></Route>
 
-  // const renderProfile = (user) => {
-  //   return (
-  //     <li key={user._id}>
-  //       <h3>
-  //         {`${user.first_name}
-  //         ${user.last_name}`}
-  //       </h3>
-  //       <p>{user.location}</p>
-  //     </li>
-  //   );
-  // };
-
-  return <NavBar />;
+        <Route
+          exact
+          path="/Suitcase"
+          render={() => (
+            <>
+              <NavBar />
+              <Suitcase />
+            </>
+          )}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
-
-// Starter code
-// {
-//   /* <div>
-// <ul>
-//   {profiles && profiles.length > 0 ? (
-//     profiles.map((profile) => renderProfile(profile))
-//   ) : (
-//     <p>No profiles found</p>
-//   )}
-// </ul>
-// </div> */
-// }
-
-//// Nav not working
-{
-  /* <BrowserRouter>
-<Route
-  exact
-  path="/"
-  render={() => (
-    <>
-      <NavBar />
-    </>
-  )}
-></Route>
-
-<Route
-  exact
-  path="/Menu"
-  render={() => (
-    <>
-      <NavBar />
-      <Menu />
-    </>
-  )}
-></Route>
-
-<Route
-  exact
-  path="/Passport"
-  render={() => (
-    <>
-      <NavBar />
-      <Passport />
-    </>
-  )}
-></Route>
-
-<Route
-  exact
-  path="/Suitcase"
-  render={() => (
-    <>
-      <NavBar />
-      <Suitcase />
-    </>
-  )}
-></Route>
-</BrowserRouter> */
-}
