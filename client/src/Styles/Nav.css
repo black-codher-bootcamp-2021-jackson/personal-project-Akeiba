@@ -1,0 +1,32 @@
+/* Whole Nav Box Area */
+.nav-bar-area {
+  height: 10%;
+  width: 100vw;
+  background-color: greenyellow;
+  display: flex;
+  position: sticky;
+}
+
+/* Nav Title Logo Area (left) */
+.nav-title-area {
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+}
+
+.nav-title {
+  color: blue;
+}
+
+/* Nav Links Area (right) */
+.nav-links-area {
+  background-color: purple;
+  width: 100vw;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 2vw;
+}
