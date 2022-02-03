@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Styles/Nav.css";
 
 import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
 import Menu from "./Components/Menu";
 import Passport from "./Components/Passport";
 import Suitcase from "./Components/Suitcase";
@@ -20,7 +21,7 @@ function App() {
           path="/"
           element={
             <>
-              <NavBar />
+              <Home />
             </>
           }
         ></Route>
@@ -28,34 +29,31 @@ function App() {
         <Route
           exact
           path="/Menu"
-          render={() => (
+          element={
             <>
-              <NavBar />
               <Menu />
             </>
-          )}
+          }
         ></Route>
 
         <Route
           exact
           path="/Passport"
-          render={() => (
+          element={
             <>
-              <NavBar />
               <Passport />
             </>
-          )}
+          }
         ></Route>
 
         <Route
           exact
           path="/Suitcase"
-          render={() => (
+          element={
             <>
-              <NavBar />
               <Suitcase />
             </>
-          )}
+          }
         ></Route>
       </Routes>
     </BrowserRouter>
