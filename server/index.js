@@ -29,11 +29,8 @@ app.use(bodyParser.json());
 // IMPORT YOUR API ROUTES HERE
 // Below is just an example. Don't forget to delete it.
 // It's importing and using everything from the profilesRoutes.js file and also passing app as a parameter for profileRoutes to use
-require("./routes/profilesRoutes")(app);
-
-// app.get("/", (req, res) => {
-//   console.log("req is ", req);
-// });
+// require("./routes/profilesRoutes")(app);
+require("./routes/flightsRoutes")(app);
 
 //////////////////////////////////////////////
 // MAKE APPLICATION AVAILABLE AND LISTENING FOR RESPONSES
