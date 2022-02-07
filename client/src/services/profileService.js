@@ -3,6 +3,8 @@
 import axios from "axios";
 
 const getAllProfiles = async () => {
+  // This mimicks postman - same request
+  // We never connect directly to database from the frontend
   const response = await axios.get(`/api/profile`);
 
   return response.data || [];

@@ -1,0 +1,20 @@
+.passport-page {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.passport-login-area {
+  border: solid 1px black;
+  width: 60vw;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.passport-login-input {
+  display: flex;
+  justify-self: center;
+}

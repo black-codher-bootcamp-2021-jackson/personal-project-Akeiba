@@ -5,6 +5,7 @@ const profileRoutes = (app) => {
   app.get(`/api/profile`, async (req, res) => {
     const profiles = await Profile.find();
 
+    console.log("profiles =", profiles);
     return res.status(200).send(profiles);
   });
 
