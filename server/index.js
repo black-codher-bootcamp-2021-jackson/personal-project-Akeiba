@@ -10,7 +10,8 @@ const mongoose = require("mongoose");
 
 //////////////////////////////////////////////
 // IMPORT YOUR SCHEMAS HERE
-require("./models/Profiles"); //This is just an example. Don't forget to delete this
+// require("./models/Profiles"); //This is just an example. Don't forget to delete this
+require("./models/Flights");
 
 //////////////////////////////////////////////
 // GLOBAL VARIABLES

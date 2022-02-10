@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Profile = mongoose.model("profiles");
 
 const profileRoutes = (app) => {
+  // Async so no response given until req completed
   app.get(`/api/profile`, async (req, res) => {
     const profiles = await Profile.find();
 

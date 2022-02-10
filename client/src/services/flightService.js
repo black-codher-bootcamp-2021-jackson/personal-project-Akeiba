@@ -4,7 +4,8 @@ import axios from "axios";
 const getAllFlights = async () => {
   // This mimicks postman - same request
   // We never connect directly to database from the frontend
-  const response = await axios.get(`/api/flights`);
+  // Client is getting this from localhost:8080 and then the endpoint, this means not having to add whole URL.
+  const response = await axios.get(`/api/flight`);
 
   return response.data || [];
 };

@@ -25,4 +25,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# This will mean everything in the data folder will be ignored.
 /server/data/*

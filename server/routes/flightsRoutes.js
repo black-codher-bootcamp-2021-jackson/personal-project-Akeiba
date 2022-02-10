@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Flight = mongoose.model("flights");
 
 const flightRoutes = (app) => {
-  app.get(`/api/route`, async (req, res) => {
+  app.get(`/api/flight`, async (req, res) => {
     const flights = await Flight.find();
 
     console.log("flights =", flights);

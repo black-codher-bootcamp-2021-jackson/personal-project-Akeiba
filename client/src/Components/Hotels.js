@@ -1,19 +1,17 @@
 import React from "react";
 import "../Styles/Nav.css";
-
 import NavBar from "./NavBar";
-import Flights from "./Flights";
 
 // Will change, need links to load primarily
-const Home = () => {
+const Hotels = () => {
   return (
     <>
       <NavBar />
-      <div className="home-page">
-        <h1 className="home-header">Home</h1>
+      <div className="hotels-page">
+        <h1 className="hotels-header">Hotels</h1>
       </div>
     </>
   );
 };
 
-export default Home;
+export default Hotels;

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getAllFlights } from "../services/flightService";
+import NavBar from "./NavBar";
 
 function Flights() {
+  // If any changes to flights at all, call this function inside of useEffect
+
   const [flights, setFlights] = useState(null);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ function Flights() {
     getFlights();
   }, [flights]);
 
-  const renderFlights = (flight) => {
+  const renderFlight = (flight) => {
     return (
       <li key={flight._id}>
         <h2>{`
@@ -30,9 +33,11 @@ function Flights() {
 
   return (
     <>
+      <NavBar />
+
       <ul>
         {flights && flights.length > 0 ? (
-          flights.map((flight) => renderFlights(flight))
+          flights.map((flight) => renderFlight(flight))
         ) : (
           <p>There aren't any flights</p>
         )}

@@ -18,10 +18,31 @@
   color: blue;
 }
 
-/* Nav Links Area (right) */
-.nav-links-area {
+/* Nav Links Areas (right) */
+.nav-links-areas {
+  display: flex;
+}
+
+.nav-links-area-upper {
   background-color: purple;
-  width: 100vw;
+  width: 60vw;
+  height: 50%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.nav-links-area-lower {
+  background-color: blue;
+  width: 60vw;
+  height: 50%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.nav-links-area-upper {
+  background-color: purple;
+  width: 60vw;
   display: flex;
   justify-content: right;
   align-items: center;
