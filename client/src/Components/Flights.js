@@ -25,7 +25,7 @@ function Flights() {
                ${flight.airport_name} (${flight.airport_code})
             `}</h2>
         <h3>{`
-            I fly to ${flight.airport_destinations}
+            I fly to ${flight.airport_destinations.map((item) => item.name)};
             `}</h3>
       </li>
     );
