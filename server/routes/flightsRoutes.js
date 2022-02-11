@@ -14,7 +14,7 @@ const flightRoutes = (app) => {
 
     return res.status(201).send({
       error: false,
-      profile,
+      flight,
     });
   });
 
