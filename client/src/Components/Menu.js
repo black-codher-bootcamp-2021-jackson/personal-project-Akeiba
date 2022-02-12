@@ -9,8 +9,12 @@ const Menu = () => {
   return (
     <>
       <NavBar />
-      <div className="menu-page">
-        <h1 className="menu-header">Menu</h1>
+      <div className="menu-underlay">
+        <div className="menu-page">
+          <div className="menu-page">
+            <h1 className="menu-header">Menu</h1>
+          </div>
+        </div>
       </div>
     </>
   );
