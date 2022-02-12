@@ -2,9 +2,10 @@
 .nav-bar-area {
   height: 10%;
   width: 100vw;
-  background-color: greenyellow;
+  background-color: #6c7775;
+  /* background-color: #429998; */
   display: flex;
-  position: sticky;
+  position: fixed;
 }
 
 /* Nav Title Logo Area (left) */
@@ -15,7 +16,7 @@
 }
 
 .nav-title {
-  color: blue;
+  color: #fff;
 }
 
 /* Nav Links Areas (right) */
@@ -24,24 +25,23 @@
 }
 
 .nav-links-area-upper {
-  background-color: purple;
   width: 60vw;
   height: 50%;
   display: flex;
   justify-content: right;
   align-items: center;
+  color: #fff;
 }
 
 .nav-links-area-lower {
-  background-color: blue;
   width: 60vw;
   height: 50%;
   display: flex;
   justify-content: right;
   align-items: center;
+  color: #fff;
 }
 .nav-links-area-upper {
-  background-color: purple;
   width: 60vw;
   display: flex;
   justify-content: right;

@@ -1,0 +1,49 @@
+.hotel-underlay {
+  background-image: url(../Components/imagery/hotel-image.png);
+  width: 100vw;
+  height: 90vh;
+  top: 9vh;
+  display: block;
+  position: relative;
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 25%; */
+}
+
+.hotel-underlay::after {
+  content: "";
+  background-image: linear-gradient(
+    to right top,
+    #edebe4,
+    #bcc0b9,
+    #8c9792,
+    #606f70,
+    #3b494f,
+    #304352,
+    #2e3c54,
+    #343252,
+    #5d4070,
+    #904b85,
+    #c7538e,
+    #fb5f8a
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 25%;
+}
+
+.hotel-page {
+  width: 100vw;
+  height: 100vh;
+  /* margin-top: 20vh; */
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  /* opacity: 100%; */
+  /* align-items: center; */
+}

@@ -1,6 +1,8 @@
 import React from "react";
-import "../Styles/Nav.css";
 import NavBar from "./NavBar";
+
+import "../Styles/Nav.css";
+import "../Styles/Menu.css";
 
 // Will change, need links to load primarily
 const Menu = () => {

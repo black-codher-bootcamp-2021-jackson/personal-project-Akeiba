@@ -3,10 +3,13 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Styles/Nav.css";
 
+// Upper nav components import
 import Home from "./Components/Home";
 import Menu from "./Components/Menu";
 import Passport from "./Components/Passport";
 import Suitcase from "./Components/Suitcase";
+
+// Lower nav components import
 import Flights from "./Components/Flights";
 import Hotels from "./Components/Hotels";
 import Parking from "./Components/Parking";

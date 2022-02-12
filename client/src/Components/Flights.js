@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getAllFlights } from "../services/flightService";
+
 import NavBar from "./NavBar";
+import "../Styles/Flights.css";
 
 function Flights() {
-  // If any changes to flights at all, call this function inside of useEffect
-
+  // If any changes to flights at all, app will call this function inside of useEffect
   const [flights, setFlights] = useState(null);
 
+  // Get flights data from server
   useEffect(() => {
     async function getFlights() {
       if (!flights) {
@@ -18,6 +20,7 @@ function Flights() {
     getFlights();
   }, [flights]);
 
+  // Display flight in a certain way
   const renderFlight = (flight) => {
     return (
       <li key={flight._id}>
@@ -34,14 +37,17 @@ function Flights() {
   return (
     <>
       <NavBar />
-
-      <ul>
-        {flights && flights.length > 0 ? (
-          flights.map((flight) => renderFlight(flight))
-        ) : (
-          <p>There aren't any flights</p>
-        )}
-      </ul>
+      <div className="flight-underlay">
+        <div className="flight-page">
+          <ul>
+            {flights && flights.length > 0 ? (
+              flights.map((flight) => renderFlight(flight))
+            ) : (
+              <p>There aren't any flights</p>
+            )}
+          </ul>
+        </div>
+      </div>
     </>
   );
 }

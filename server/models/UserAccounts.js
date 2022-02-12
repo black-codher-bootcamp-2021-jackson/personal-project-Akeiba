@@ -7,7 +7,7 @@ const userAccountSchema = new Schema({
   email: String,
   password: String,
   country: String,
-  bucketList: [String],
+  bucketList: [Object],
 });
 
 mongoose.model("userAccounts", userAccountSchema);
