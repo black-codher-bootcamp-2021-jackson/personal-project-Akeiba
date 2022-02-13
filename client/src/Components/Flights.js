@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllFlights } from "../services/flightService";
 
 import NavBar from "./NavBar";
+import TravelCalendar from "./TravelCalendar";
 import "../Styles/Flights.css";
 
 function Flights() {
@@ -39,6 +40,7 @@ function Flights() {
       <NavBar />
       <div className="flight-underlay">
         <div className="flight-page">
+          <TravelCalendar />
           <ul>
             {flights && flights.length > 0 ? (
               flights.map((flight) => renderFlight(flight))
