@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getAllFlights } from "../services/flightService";
+import Calendar from "react-calendar";
 
 import NavBar from "./NavBar";
-import TravelCalendar from "./TravelCalendar";
 import "../Styles/Flights.css";
 
 function Flights() {
@@ -35,12 +35,18 @@ function Flights() {
     );
   };
 
+  const [date, setDate] = useState(new Date());
+
+  const onChange = (date) => setDate(date);
+
   return (
     <>
       <NavBar />
       <div className="flight-underlay">
         <div className="flight-page">
-          <TravelCalendar />
+          <div className="flights-calendar">
+            <Calendar onChange={onChange} value={date} />
+          </div>
           <ul>
             {flights && flights.length > 0 ? (
               flights.map((flight) => renderFlight(flight))

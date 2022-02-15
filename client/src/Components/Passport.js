@@ -88,6 +88,16 @@ const Passport = () => {
                   value="Let's go!"
                 ></input>
               </label>
+
+              <label htmlFor="passportLoginCountry" className="passport-label">
+                Country
+                <input
+                  id="passport-country"
+                  type="text"
+                  className="passport-login-input"
+                  placeholder="Add your country"
+                ></input>
+              </label>
             </form>
           </div>
         </div>

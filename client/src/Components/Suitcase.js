@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
+import TravelCalendar from "./TravelCalendar";
 
 import "../Styles/Nav.css";
 import "../Styles/Suitcase.css";
@@ -11,11 +12,10 @@ const Suitcase = () => {
       <NavBar />
       <div className="suitcase-underlay">
         <div className="suitcase-page">
-          <div className="suitcase-underlay">
-            <div className="suitcase-page">
-              <div className="suitcase-page">
-                <h1 className="suitcase-header">Suitcase</h1>
-              </div>
+          <div className="suitcase-page">
+            <h1 className="suitcase-header">Suitcase</h1>
+            <div>
+              <TravelCalendar />
             </div>
           </div>
         </div>
