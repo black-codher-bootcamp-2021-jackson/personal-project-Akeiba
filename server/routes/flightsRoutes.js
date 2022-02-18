@@ -5,7 +5,7 @@ const flightRoutes = (app) => {
   app.get(`/api/flight`, async (req, res) => {
     const flights = await Flight.find();
 
-    console.log("flights =", flights);
+    // console.log("flights =", flights);
     return res.status(200).send(flights);
   });
 

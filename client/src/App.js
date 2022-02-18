@@ -1,5 +1,6 @@
 // import React, { useState, useEffect } from "react";
 import React from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Styles/Nav.css";
 
@@ -18,6 +19,19 @@ import Parking from "./Components/Parking";
 // import { getAllProfiles } from "./services/profileService";
 
 function App() {
+  // Flights state
+  const [date, setDate] = useState("");
+  const [flightAirport, setFlightAirport] = useState("");
+  const [flightDates, setFlightDates] = useState("");
+
+  // Hotels state
+  const [hotelCity, setHotelCity] = useState("");
+  const [hotelDates, setHotelDates] = useState("");
+
+  // Parking state
+  const [parkingCity, setParkingCity] = useState("");
+  const [parkingDates, setParkingDates] = useState("");
+
   return (
     <BrowserRouter>
       <Routes>
@@ -56,7 +70,7 @@ function App() {
           path="/Suitcase"
           element={
             <>
-              <Suitcase />
+              <Suitcase setDate={setDate} />
             </>
           }
         ></Route>
@@ -66,7 +80,11 @@ function App() {
           path="/Flights"
           element={
             <>
-              <Flights />
+              <Flights
+                setDate={setDate}
+                setFlightDates={setFlightDates}
+                setFlightAirport={setFlightAirport}
+              />
             </>
           }
         ></Route>
@@ -76,7 +94,11 @@ function App() {
           path="/Hotels"
           element={
             <>
-              <Hotels />
+              <Hotels
+                setDate={setDate}
+                setHotelCity={setHotelCity}
+                setHotelDates={setHotelDates}
+              />
             </>
           }
         ></Route>
@@ -86,7 +108,11 @@ function App() {
           path="/Parking"
           element={
             <>
-              <Parking />
+              <Parking
+                setDate={setDate}
+                setParkingCity={setParkingCity}
+                setParkingDates={setParkingDates}
+              />
             </>
           }
         ></Route>

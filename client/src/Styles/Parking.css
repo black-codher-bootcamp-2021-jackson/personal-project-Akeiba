@@ -5,10 +5,8 @@
   top: 9vh;
   display: block;
   position: relative;
-  /* z-index: -2; */
   background-repeat: no-repeat;
   background-size: cover;
-  /* opacity: 25%; */
 }
 
 .parking-underlay::after {
@@ -40,10 +38,21 @@
 .parking-page {
   width: 100vw;
   height: 100vh;
-  /* margin-top: 20vh; */
-  display: flex;
-  justify-content: center;
   z-index: 10;
-  /* opacity: 100%; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.parking-background-box {
+  width: 60vw;
+  height: 60vh;
+  bottom: 10vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 25%; */
 }

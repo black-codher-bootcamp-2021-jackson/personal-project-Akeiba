@@ -1,26 +1,65 @@
 import React from "react";
 import NavBar from "./NavBar";
 import { useState } from "react";
-import Calendar from "react-calendar";
+import TravelCalendar from "./TravelCalendar";
 
-// import "react-calendar/dist/Calendar.css";
+// import DropdownBar from "./Dropdown";
+
 import "../Styles/Nav.css";
 import "../Styles/Parking.css";
-// import TravelCalendar from "./TravelCalendar";
 
 // Will change, need links to load primarily
 const Parking = () => {
-  const [date, setDate] = useState(new Date());
+  // Calendar state
+  // const [date, setDate] = useState(new Date());
+  // const onChange = (date) => setDate(date);
 
-  const onChange = (date) => setDate(date);
+  // // Dropdown parking state
+  // const [selectedAirport, setSelectedAirport] = useState("");
+  // const handleSelectedAirport = (e) => {
+  //   e.preventdefault();
+  //   console.log("you've chosen =", e.target.value);
+  //   setSelectedAirport(e.target.value);
+  // };
 
   return (
     <>
       <NavBar />
       <div className="parking-underlay">
         <div className="parking-page">
-          <div>
-            <Calendar onChange={onChange} value={date} />
+          <div className="parking-background-box">
+            {/* <DropdownBar /> */}
+            <TravelCalendar />
+            <div className="parking-dropdown">
+              <form className="parking-form">
+                <label>
+                  I'll be parking at: <br></br>
+                </label>
+                <select name="parkingselectList" className="parkingSelectList">
+                  <option value="option 1">London Stansted</option>
+                  <option value="option 2">Indira Ghandi International</option>
+                  <option value="option 3">
+                    José María Córdova International
+                  </option>
+                  <option value="option 4">Ljubljana Jože Pučnik</option>
+                  <option value="option 5">Hong Kong International</option>
+                  <option value="option 6">Seville</option>
+                  <option value="option 7">Birmingham International</option>
+                  <option value="option 8">Manchester</option>
+                  <option value="option 9">Rafael Núñez International</option>
+                </select>
+                <br></br>
+                <input
+                  type="submit"
+                  className="submit-btn"
+                  value="Pack into my Suitcase!"
+                  // onChange={handleSelectedAirport}
+                ></input>
+                <p>
+                  You selected <span></span>
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -47,3 +86,34 @@ export default Parking;
 //   </div>
 // );
 // }
+
+/* <div className="parking-dropdown">
+<form className="parking-form">
+  <label>
+    I'll be parking at: <br></br>
+  </label>
+  <select name="parkingselectList" className="parkingSelectList">
+    <option value="option 1">London Stansted</option>
+    <option value="option 2">Indira Ghandi International</option>
+    <option value="option 3">
+      José María Córdova International
+    </option>
+    <option value="option 4">Ljubljana Jože Pučnik</option>
+    <option value="option 5">Hong Kong International</option>
+    <option value="option 6">Seville</option>
+    <option value="option 7">Birmingham International</option>
+    <option value="option 8">Manchester</option>
+    <option value="option 9">Rafael Núñez International</option>
+  </select>
+  <br></br>
+  <input
+    type="submit"
+    className="submit-btn"
+    value="Pack into my Suitcase!"
+    onChange={handleSelectedAirport}
+  ></input>
+  <p>
+    You selected <span></span>
+  </p>
+</form>
+</div> */
