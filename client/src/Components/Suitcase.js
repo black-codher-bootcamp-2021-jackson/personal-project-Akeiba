@@ -5,6 +5,11 @@ import TravelCalendar from "./TravelCalendar";
 import "../Styles/Nav.css";
 import "../Styles/Suitcase.css";
 
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+// need to import the "getters" not the "setters" to show state of selected suitcase items
+
 // Will change, need links to load primarily
 const Suitcase = () => {
   return (

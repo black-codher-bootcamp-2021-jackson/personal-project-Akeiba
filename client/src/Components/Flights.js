@@ -9,7 +9,6 @@ import "../Styles/Flights.css";
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
-////////////////////////////////////////////////
 
 // Function
 function Flights({ setFlightAirport, setFlightDates }) {
@@ -40,11 +39,6 @@ function Flights({ setFlightAirport, setFlightDates }) {
 
   const flyDate = ["20th January 2022", "15th June 2022"];
 
-  // const destinations = flights.map((flight) => ({
-  //   desti: flight.airport_destinations.map((val) => val.name),
-  // }));
-  // console.log("res =", destinations);
-
   const defaultDestinations = [
     "London Stansted",
     "Berlin Brandenburg",
@@ -61,20 +55,21 @@ function Flights({ setFlightAirport, setFlightDates }) {
     // console.log("flight =", flight);
     return [...dests, ...flight.airport_destinations];
   }, []);
-  console.log("destinations =", destinations);
-  console.log("flights =", flights);
+  // console.log("destinations =", destinations);
+  // console.log("flights =", flights);
 
-  const destinationNames = destinations.map((desti) => desti.name);
-  console.log("destinationNames =", destinationNames);
-
-  const filteredDestinationNames = destinationNames
+  const outboundDestinations = destinations
+    .map((desti) => desti.name)
     .reduce(
       (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
       []
     )
     .sort();
+  console.log("outboundDestinations =", outboundDestinations);
 
-  console.log("Dfilt = ", filteredDestinationNames);
+  let outboundOptions = outboundDestinations.map((item) => (
+    <option key={item}>{item}</option>
+  ));
 
   /////////////////////////
   // Calendar state changes
@@ -104,16 +99,7 @@ function Flights({ setFlightAirport, setFlightDates }) {
               </select>
 
               <label>Flying to:</label>
-              <select name="parkingselectList" className="parkingSelectList">
-                <option value="option 1">{defaultDestinations[0]}</option>
-                <option value="option 2">{defaultDestinations[1]}</option>
-                <option value="option 3">{defaultDestinations[2]}</option>
-                <option value="option 4">{defaultDestinations[3]}</option>
-                <option value="option 5">{defaultDestinations[4]}</option>
-                <option value="option 6">{defaultDestinations[5]}</option>
-                <option value="option 7">{defaultDestinations[6]}</option>
-                <option value="option 8">{defaultDestinations[7]}</option>
-              </select>
+              <select>{outboundOptions}</select>
             </form>
 
             <TravelCalendar />
@@ -162,3 +148,14 @@ export default Flights;
 // };
 
 ////////////
+
+/* <select name="parkingselectList" className="parkingSelectList">
+<option value="option 1">{defaultDestinations[0]}</option>
+<option value="option 2">{defaultDestinations[1]}</option>
+<option value="option 3">{defaultDestinations[2]}</option>
+<option value="option 4">{defaultDestinations[3]}</option>
+<option value="option 5">{defaultDestinations[4]}</option>
+<option value="option 6">{defaultDestinations[5]}</option>
+<option value="option 7">{defaultDestinations[6]}</option>
+<option value="option 8">{defaultDestinations[7]}</option>
+</select> */

@@ -6,7 +6,9 @@ import TravelCalendar from "./TravelCalendar";
 import "../Styles/Nav.css";
 import "../Styles/Hotel.css";
 
-// Will change, need links to load primarily
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
 const Hotels = () => {
   // const [date, setDate] = useState(new Date());
   // const onChange = (date) => setDate(date);

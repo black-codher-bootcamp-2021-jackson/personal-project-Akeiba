@@ -10,7 +10,9 @@ import { FaPlaneDeparture } from "react-icons/fa";
 import { FaBed } from "react-icons/fa";
 import { FaCar } from "react-icons/fa";
 
-// Will change, need links to load primarily
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
 const Menu = () => {
   return (
     <>
