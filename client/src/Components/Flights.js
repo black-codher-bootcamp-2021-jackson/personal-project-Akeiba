@@ -39,7 +39,7 @@ function Flights({ setFlightAirport, setFlightDates }) {
 
   const flyDate = ["20th January 2022", "15th June 2022"];
 
-  const defaultDestinations = [
+  const defaultarrivalDestinations = [
     "London Stansted",
     "Berlin Brandenburg",
     "Indira Ghandi International",
@@ -50,24 +50,24 @@ function Flights({ setFlightAirport, setFlightDates }) {
     "Ljubljana Jože Pučnik",
   ];
 
-  const destinations = (flights || []).reduce((dests, flight) => {
+  const allArrivalDestinations = (flights || []).reduce((dests, flight) => {
     // console.log("dest =", dests);
     // console.log("flight =", flight);
     return [...dests, ...flight.airport_destinations];
   }, []);
-  // console.log("destinations =", destinations);
+  // console.log("arrivalDestinations =", arrivalDestinations);
   // console.log("flights =", flights);
 
-  const outboundDestinations = destinations
+  const allArrivalDestinationsList = allArrivalDestinations
     .map((desti) => desti.name)
     .reduce(
       (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
       []
     )
     .sort();
-  console.log("outboundDestinations =", outboundDestinations);
+  console.log("allArrivalDestinationsList =", allArrivalDestinationsList);
 
-  let outboundOptions = outboundDestinations.map((item) => (
+  let outboundOptions = allArrivalDestinationsList.map((item) => (
     <option key={item}>{item}</option>
   ));
 
@@ -105,7 +105,8 @@ function Flights({ setFlightAirport, setFlightDates }) {
             <TravelCalendar />
             <p>
               You're going away from {flyDate[0]} to {flyDate[1]}, and
-              travelling to {defaultDestinations[Math.floor(Math.random() * 8)]}
+              travelling to{" "}
+              {defaultarrivalDestinations[Math.floor(Math.random() * 8)]}
               Airport
             </p>
             <input
@@ -141,7 +142,7 @@ export default Flights;
 //              ${flight.airport_name} (${flight.airport_code})
 //           `}</h2>
 //       <h3>{`
-//           I fly to ${flight.airport_destinations.map((item) => item.name)};
+//           I fly to ${flight.airport_arrivalDestinations.map((item) => item.name)};
 //           `}</h3>
 //     </li>
 //   );
@@ -150,12 +151,12 @@ export default Flights;
 ////////////
 
 /* <select name="parkingselectList" className="parkingSelectList">
-<option value="option 1">{defaultDestinations[0]}</option>
-<option value="option 2">{defaultDestinations[1]}</option>
-<option value="option 3">{defaultDestinations[2]}</option>
-<option value="option 4">{defaultDestinations[3]}</option>
-<option value="option 5">{defaultDestinations[4]}</option>
-<option value="option 6">{defaultDestinations[5]}</option>
-<option value="option 7">{defaultDestinations[6]}</option>
-<option value="option 8">{defaultDestinations[7]}</option>
+<option value="option 1">{defaultarrivalDestinations[0]}</option>
+<option value="option 2">{defaultarrivalDestinations[1]}</option>
+<option value="option 3">{defaultarrivalDestinations[2]}</option>
+<option value="option 4">{defaultarrivalDestinations[3]}</option>
+<option value="option 5">{defaultarrivalDestinations[4]}</option>
+<option value="option 6">{defaultarrivalDestinations[5]}</option>
+<option value="option 7">{defaultarrivalDestinations[6]}</option>
+<option value="option 8">{defaultarrivalDestinations[7]}</option>
 </select> */
