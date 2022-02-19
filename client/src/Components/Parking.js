@@ -22,6 +22,8 @@ const Parking = () => {
   //   setSelectedAirport(e.target.value);
   // };
 
+  const parkingNoDays = 5;
+
   return (
     <>
       <NavBar />
@@ -33,7 +35,7 @@ const Parking = () => {
             <div className="parking-dropdown">
               <form className="parking-form">
                 <label>
-                  I'll be parking at: <br></br>
+                  You'll be parking for {parkingNoDays} days at: <br></br>
                 </label>
                 <select name="parkingselectList" className="parkingSelectList">
                   <option value="option 1">London Stansted</option>

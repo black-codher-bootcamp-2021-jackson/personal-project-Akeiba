@@ -29,6 +29,7 @@ function Flights({ setFlightAirport }, { setFlightDates }) {
     getFlights();
   }, [flights]);
 
+  ///// ?
   // const onButtonClick = (airport, date) => {
   //   console.log("airport = ", airport);
   //   console.log("date = ", date);
@@ -37,32 +38,25 @@ function Flights({ setFlightAirport }, { setFlightDates }) {
   //   setFlightDates(date);
   // };
 
-  // Display flight in a certain way
-  const renderFlight = (flight) => {
-    return (
-      <li key={flight._id}>
-        <h2>{`
-               ${flight.airport_name} (${flight.airport_code})
-            `}</h2>
-        <h3>{`
-            I fly to ${flight.airport_destinations.map((item) => item.name)};
-            `}</h3>
-      </li>
-    );
-  };
-
   const flyDate = ["20th January 2022", "15th June 2022"];
-  console.log("flights = ", flights);
-  const beforeFlights = flights.map((flight) => flight.airport_destinations);
-  console.log("Before = ", beforeFlights);
-  const getAirports = beforeFlights.map((val) => val[0].name);
-  console.log("get = ", getAirports);
-  const noRepeatAirports = getAirports.reduce(
-    (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
-    []
-  );
-  console.log("no rep = ", noRepeatAirports);
 
+  // const destinations = flights.map((flight) => ({
+  //   desti: flight.airport_destinations.map((val) => val.name),
+  // }));
+  // console.log("res =", destinations);
+
+  const defaultDestinations = [
+    "London Stansted",
+    "Berlin Brandenburg",
+    "Indira Ghandi International",
+    "Munich International",
+    "Goa International",
+    "Ezeiza International",
+    "El Calafate",
+    "Ljubljana Jože Pučnik",
+  ];
+
+  /////////////////////////
   // Calendar state changes
   // const [date, setDate] = useState(new Date());
   // const onChange = (date) => setDate(date);
@@ -72,17 +66,49 @@ function Flights({ setFlightAirport }, { setFlightDates }) {
       <NavBar />
       <div className="flight-underlay">
         <div className="flight-page">
-          <TravelCalendar />
-          <p>
-            You'll be flying from {flyDate[0]} to {flyDate[1]}
-          </p>
-          <ul>
-            {flights && flights.length > 0 ? (
-              flights.map((flight) => renderFlight(flight))
-            ) : (
-              <p>There aren't any flights</p>
-            )}
-          </ul>
+          <div className="flight-background-box">
+            <form className="parking-form">
+              <label>Flying from:</label>
+              <select name="parkingselectList" className="parkingSelectList">
+                <option value="option 1">Vienna</option>
+                <option value="option 2">Malaga</option>
+                <option value="option 3">
+                  José María Córdova International
+                </option>
+                <option value="option 4">Stockholm Arlanda</option>
+                <option value="option 5">Hong Kong International</option>
+                <option value="option 6">Seville</option>
+                <option value="option 7">Birmingham International</option>
+                <option value="option 8">Manchester</option>
+                <option value="option 9">Rafael Núñez International</option>
+              </select>
+
+              <label>Flying to:</label>
+              <select name="parkingselectList" className="parkingSelectList">
+                <option value="option 1">{defaultDestinations[0]}</option>
+                <option value="option 2">{defaultDestinations[1]}</option>
+                <option value="option 3">{defaultDestinations[2]}</option>
+                <option value="option 4">{defaultDestinations[3]}</option>
+                <option value="option 5">{defaultDestinations[4]}</option>
+                <option value="option 6">{defaultDestinations[5]}</option>
+                <option value="option 7">{defaultDestinations[6]}</option>
+                <option value="option 8">{defaultDestinations[7]}</option>
+              </select>
+            </form>
+
+            <TravelCalendar />
+            <p>
+              You're going away from {flyDate[0]} to {flyDate[1]}, and
+              travelling to {defaultDestinations[Math.floor(Math.random() * 8)]}
+              Airport
+            </p>
+            <input
+              type="submit"
+              className="submit-btn"
+              value="Pack into my Suitcase!"
+              // onChange={handleSelectedAirport}
+            ></input>
+          </div>
         </div>
       </div>
     </>
@@ -91,43 +117,28 @@ function Flights({ setFlightAirport }, { setFlightDates }) {
 
 export default Flights;
 
-/* <div>
-  <p>{renderUserAccount(userAccount)}</p>
-</div>;
+//////// Previous Flights display
+// Get flights from back end
+/* <ul>
+{flights && flights.length > 0 ? (
+  flights.map((flight) => renderFlight(flight))
+) : (
+  <p>There aren't any flights</p>
+)}
+</ul> */
 
-
-  ////////////////////////
-  // User Account state change
-  const [userAccount, setUserAccount] = useState(null);
-
-  // If any changes to flights at all, app will call this function inside of useEffect
-  // Get flights data from server
-  useEffect(() => {
-    async function getUserAccounts() {
-      if (!userAccount) {
-        const response = await getAllUserAccounts();
-        setUserAccount(response);
-      }
-    }
-
-    getUserAccounts();
-  }, [userAccount]);
-
-  const renderUserAccount = (userAccount) => {
-    return (
-      <li key={userAccount._id}>
-        <h2>{`
-               ${userAccount.username} (${userAccount.email})
-            `}</h2>
-        {/* <h3>{`
-             ${userAccount.map((user) => user.bucketList)};
-            `}</h3> */
+// // Display flight in a certain way
+// const renderFlight = (flight) => {
+//   return (
+//     <li key={flight._id}>
+//       <h2>{`
+//              ${flight.airport_name} (${flight.airport_code})
+//           `}</h2>
+//       <h3>{`
+//           I fly to ${flight.airport_destinations.map((item) => item.name)};
+//           `}</h3>
 //     </li>
 //   );
-// }; */}
+// };
 
-////////////////////////
-
-/* <div className="flights-calendar">
-            <Calendar onChange={onChange} value={date} />
-          </div> */
+////////////

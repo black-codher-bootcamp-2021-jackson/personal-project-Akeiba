@@ -23,10 +23,7 @@ function TravelCalendar() {
           <span className="bold">End:</span> {date[1].toDateString()}
         </p>
       ) : (
-        <p className="text-center">
-          <span className="bold">Default selected date:</span>{" "}
-          {date.toDateString()}
-        </p>
+        <p className="text-center"></p>
       )}
     </div>
   );
