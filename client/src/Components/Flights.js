@@ -12,7 +12,7 @@ import "../Styles/Flights.css";
 ////////////////////////////////////////////////
 
 // Function
-function Flights({ setFlightAirport }, { setFlightDates }) {
+function Flights({ setFlightAirport, setFlightDates }) {
   // Flights state change
   const [flights, setFlights] = useState(null);
 
@@ -55,6 +55,26 @@ function Flights({ setFlightAirport }, { setFlightDates }) {
     "El Calafate",
     "Ljubljana Jože Pučnik",
   ];
+
+  const destinations = (flights || []).reduce((dests, flight) => {
+    // console.log("dest =", dests);
+    // console.log("flight =", flight);
+    return [...dests, ...flight.airport_destinations];
+  }, []);
+  console.log("destinations =", destinations);
+  console.log("flights =", flights);
+
+  const destinationNames = destinations.map((desti) => desti.name);
+  console.log("destinationNames =", destinationNames);
+
+  const filteredDestinationNames = destinationNames
+    .reduce(
+      (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
+      []
+    )
+    .sort();
+
+  console.log("Dfilt = ", filteredDestinationNames);
 
   /////////////////////////
   // Calendar state changes
