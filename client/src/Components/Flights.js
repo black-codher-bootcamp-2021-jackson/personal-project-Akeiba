@@ -36,11 +36,13 @@ function Flights() {
     getFlights();
   }, [flights]);
 
+  // Store value of selected departure dropdown item
   const handleDeparture = (e) => {
     console.log("from =", e.target.value);
     setDepartureAirport(e.target.value);
   };
 
+  // Store value of selected arrival dropdown item
   const handleArrival = (e) => {
     console.log("to =", e.target.value);
     setArrivalAirport(e.target.value);

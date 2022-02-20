@@ -12,6 +12,7 @@ import "../Styles/Hotel.css";
 
 const Hotels = () => {
   const [hotels, setHotels] = useState("");
+  const [chosenHotel, setChosenHotel] = useState("");
 
   // If any changes to flights at all, app will call this function inside of useEffect
   // Get flights data from server
@@ -30,8 +31,6 @@ const Hotels = () => {
     return [...venues, hotel.hotel_name];
   }, []);
 
-  console.log("before H =", allHotelOptions);
-
   // // Filter through, ensure no repeats, and sort into alphabetical order
   const allHotelOptionsList = allHotelOptions
     .filter((item, index) => allHotelOptions.indexOf(item) === index)
@@ -41,6 +40,11 @@ const Hotels = () => {
   let hotelOptions = allHotelOptionsList.map((item) => (
     <option key={item}>{item}</option>
   ));
+
+  // Store value of selected hotel dropdown item
+  const handleHotel = (e) => {
+    setChosenHotel(e.target.value);
+  };
 
   /////////
   // const [date, setDate] = useState(new Date());
@@ -59,21 +63,14 @@ const Hotels = () => {
 
               <form className="hotels-form">
                 <label>Hotels:</label>
-                <select
-                // onChange={handleDeparture}
-                >
-                  {hotelOptions}
-                </select>
-              </form>
-
-              <form className="parking-form">
+                <select onChange={handleHotel}>{hotelOptions}</select>
                 <input
                   type="submit"
                   className="submit-btn"
                   value="Pack into my Suitcase!"
-                  // onChange={handleSelectedAirport}
                 ></input>
               </form>
+              <p> You've chosen to stay at {chosenHotel}</p>
             </div>
           </div>
         </div>
