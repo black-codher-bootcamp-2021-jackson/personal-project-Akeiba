@@ -13,6 +13,7 @@ const mongoose = require("mongoose");
 // require("./models/Profiles"); //This is just an example. Don't forget to delete this
 require("./models/Flights");
 require("./models/UserAccounts");
+require("./models/Hotels");
 
 //////////////////////////////////////////////
 // GLOBAL VARIABLES
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 // require("./routes/profilesRoutes")(app);
 require("./routes/flightsRoutes")(app);
 require("./routes/userAccountsRoutes")(app);
+require("./routes/hotelsRoutes")(app);
 
 //////////////////////////////////////////////
 // MAKE APPLICATION AVAILABLE AND LISTENING FOR RESPONSES

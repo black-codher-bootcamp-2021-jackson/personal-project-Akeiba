@@ -1,6 +1,7 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import { getAllHotels } from "../services/hotelService";
+
 import NavBar from "./NavBar";
-// import { useState } from "react";
 import TravelCalendar from "./TravelCalendar";
 
 import "../Styles/Nav.css";
@@ -10,11 +11,27 @@ import "../Styles/Hotel.css";
 ////////////////////////////////////////////////
 
 const Hotels = () => {
-  // const [startDate] = useState("");
-  // const [endDate] = useState("");
-  // const [chosenCity] = useState("");
-  // const [chosenHotel, setChosenHotel] = useState("");
+  const [hotels, setHotels] = useState("");
 
+  // If any changes to flights at all, app will call this function inside of useEffect
+  // Get flights data from server
+  useEffect(() => {
+    async function getHotels() {
+      if (!hotels) {
+        const response = await getAllHotels();
+        setHotels(response);
+      }
+    }
+
+    getHotels();
+  }, [hotels]);
+
+  console.log("hotels =", hotels);
+  const allHotelOptions = (hotels || []).reduce((venues, hotel) => {
+    return [...venues, hotel.hotel_name];
+  }, []);
+
+  console.log("all hotels =", allHotelOptions);
   /////////
   // const [date, setDate] = useState(new Date());
   // const onChange = (date) => setDate(date);
