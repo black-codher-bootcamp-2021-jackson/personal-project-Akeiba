@@ -54,7 +54,6 @@ function Flights() {
   const allDepartureDestinations = (flights || []).reduce((venues, flight) => {
     return [...venues, flight.airport_name];
   }, []);
-  console.log("allDeps = ", allDepartureDestinations);
 
   // Filter through, ensure no repeats, and sort into alphabetical order
   const allDepartureDestinationsList = allDepartureDestinations
@@ -65,6 +64,7 @@ function Flights() {
     )
     .sort();
 
+  // Map through and provide dropdown option for each arrival destination
   let departureOptions = allDepartureDestinationsList.map((item) => (
     <option key={item}>{item}</option>
   ));
@@ -162,58 +162,6 @@ export default Flights;
 //   setFlightAirport(airport);
 //   setFlightDates(date);
 // };
-
-/////////
-// DEPARTURES
-// Get all origin airport names
-// let depFlightList = [];
-// const allDepartureDestinations = (flights || []).reduce((dests, flight) => {
-//   // depFlightList.push(flight.airport_name);
-//   return [...dests, ...flight.airport_name];
-// }, []);
-
-///////
-
-// console.log("obj =", Object.values(flights));
-// const originFlights = Object.values(flights);
-// // const mapOrig = originFlights.reduce()
-// console.log("orig = ", typeof originFlights);
-
-// const originFlights = Object.values(flights);
-// console.log(originFlights.map((val) => val.airport_name));
-
-//////
-
-// const allDepartureDestinations = (flights || []).reduce((dests, flight) => {
-//   depFlightList.push(flight.airport_name);
-//   return [...dests, ...flight.airport_name];
-// }, []);
-
-// console.log("allDep =", allDepartureDestinationsList);
-// console.log("dep =", depFlightList);
-
-// Filter through, ensure no repeats, and sort into alphabetical order
-// const allDepartureDestinationsList = depFlightList
-//   .map((desti) => desti.name)
-//   .reduce(
-//     (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
-//     []
-//   )
-//   .sort();
-
-// // Map through and provide dropdown option for each arrival destination
-// let departureOptions = allDepartureDestinationsList.map((item) => (
-//   <option key={item}>{item}</option>
-// ));
-// console.log("departure options = ", departureOptions);
-/////////
-
-/* <p>
-You're going away from {flyDate[0]} to {flyDate[1]}, and
-travelling to
-{arrivalOptions[Math.floor(Math.random() * 8)]}
-Airport
-</p> */
 
 ///////////
 
