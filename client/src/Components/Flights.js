@@ -12,7 +12,7 @@ import "../Styles/Flights.css";
 
 // Function
 function Flights() {
-// { setFlightAirport, setFlightDates }
+  // { setFlightAirport, setFlightDates }
   // Flights state change
   const [flights, setFlights] = useState(null);
   // const [startDate, setStartDate] = useState(null);
@@ -49,6 +49,27 @@ function Flights() {
   const flyDate = ["20th January 2022", "15th June 2022"];
 
   ///////////
+  // DEPARTURES
+  // Get all possible departure flights
+  const allDepartureDestinations = (flights || []).reduce((venues, flight) => {
+    return [...venues, flight.airport_name];
+  }, []);
+  console.log("allDeps = ", allDepartureDestinations);
+
+  // Filter through, ensure no repeats, and sort into alphabetical order
+  const allDepartureDestinationsList = allDepartureDestinations
+    .map((desti) => desti)
+    .reduce(
+      (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
+      []
+    )
+    .sort();
+
+  let departureOptions = allDepartureDestinationsList.map((item) => (
+    <option key={item}>{item}</option>
+  ));
+
+  ///////////
   // ARRIVALS
   // Get all possible destination flights
   const allArrivalDestinations = (flights || []).reduce((dests, flight) => {
@@ -82,7 +103,7 @@ function Flights() {
           <div className="flight-background-box">
             <form className="parking-form">
               <label>Flying from:</label>
-              <select onChange={handleDeparture}>{arrivalOptions}</select>
+              <select onChange={handleDeparture}>{departureOptions}</select>
 
               <label>Flying to:</label>
               <select onChange={handleArrival}>{arrivalOptions}</select>
