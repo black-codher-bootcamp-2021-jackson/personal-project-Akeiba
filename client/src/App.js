@@ -20,17 +20,20 @@ import Parking from "./Components/Parking";
 
 function App() {
   // Flights state
-  const [date, setDate] = useState("");
-  const [flightAirport, setFlightAirport] = useState("");
-  const [flightDates, setFlightDates] = useState("");
+  const [flights, setFlights] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [departureAirport, setDepartureAirport] = useState("");
+  const [arrivalAirport, setArrivalAirport] = useState("");
+  const [chosenCity, setChosenCity] = useState("");
+  // const [flightDates, setFlightDates] = useState("");
 
   // Hotels state
-  const [hotelCity, setHotelCity] = useState("");
-  const [hotelDates, setHotelDates] = useState("");
+  // const [hotelCity, setHotelCity] = useState("");
+  const [chosenHotel, setChosenHotel] = useState("");
 
   // Parking state
-  const [parkingCity, setParkingCity] = useState("");
-  const [parkingDates, setParkingDates] = useState("");
+  const [chosenParking, setChosenParking] = useState("");
 
   return (
     <BrowserRouter>
@@ -70,7 +73,12 @@ function App() {
           path="/Suitcase"
           element={
             <>
-              <Suitcase setDate={setDate} />
+              <Suitcase
+                startDate={startDate}
+                endDate={endDate}
+                chosenHotel={chosenHotel}
+                chosenParking={chosenParking}
+              />
             </>
           }
         ></Route>
@@ -81,9 +89,18 @@ function App() {
           element={
             <>
               <Flights
-                setDate={setDate}
-                setFlightDates={setFlightDates}
-                setFlightAirport={setFlightAirport}
+                flights={flights}
+                setFlights={setFlights}
+                startDate={startDate}
+                endDate={endDate}
+                setStartDate={setStartDate}
+                setEndDate={setEndDate}
+                departureAirport={departureAirport}
+                setDepartureAirport={setDepartureAirport}
+                arrivalAirport={arrivalAirport}
+                setArrivalAirport={setArrivalAirport}
+                chosenCity={chosenCity}
+                setChosenCity={setChosenCity}
               />
             </>
           }
@@ -95,9 +112,11 @@ function App() {
           element={
             <>
               <Hotels
-                setDate={setDate}
-                setHotelCity={setHotelCity}
-                setHotelDates={setHotelDates}
+                startDate={startDate}
+                endDate={endDate}
+                chosenCity={chosenCity}
+                chosenHotel={chosenHotel}
+                setChosenHotel={setChosenHotel}
               />
             </>
           }
@@ -109,9 +128,11 @@ function App() {
           element={
             <>
               <Parking
-                setDate={setDate}
-                setParkingCity={setParkingCity}
-                setParkingDates={setParkingDates}
+                startDate={startDate}
+                endDate={endDate}
+                departureAirport={departureAirport}
+                chosenParking={chosenParking}
+                setChosenParking={setChosenParking}
               />
             </>
           }

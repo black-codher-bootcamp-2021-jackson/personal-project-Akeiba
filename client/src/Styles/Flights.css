@@ -60,3 +60,8 @@
   align-items: center;
   /* opacity: 25%; */
 }
+
+.parking-form {
+  display: flex;
+  flex-direction: column;
+}

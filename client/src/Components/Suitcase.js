@@ -12,6 +12,12 @@ import "../Styles/Suitcase.css";
 
 // Will change, need links to load primarily
 const Suitcase = () => {
+  // const [startDate, setStartDate] = useState("");
+  // const [endDate, setEndDate] = useState("");
+  // const [hotelCity, setHotelCity] = useState("");
+  // const [chosenHotel, setChosenHotel] = useState("");
+  // const [chosenParking, setChosenParking] = useState("");
+
   return (
     <>
       <NavBar />

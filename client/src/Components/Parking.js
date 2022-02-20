@@ -12,10 +12,12 @@ import "../Styles/Parking.css";
 ////////////////////////////////////////////////
 
 const Parking = () => {
-  // Calendar state
-  // const [date, setDate] = useState(new Date());
-  // const onChange = (date) => setDate(date);
+  // const [startDate] = useState("");
+  // const [endDate] = useState("");
+  // const [departureAirport] = useState("");
+  // const [chosenParking, setChosenParking] = useState("");
 
+  /////////////////
   // // Dropdown parking state
   // const [selectedAirport, setSelectedAirport] = useState("");
   // const handleSelectedAirport = (e) => {

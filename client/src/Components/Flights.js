@@ -14,6 +14,13 @@ import "../Styles/Flights.css";
 function Flights({ setFlightAirport, setFlightDates }) {
   // Flights state change
   const [flights, setFlights] = useState(null);
+  // const [startDate, setStartDate] = useState(null);
+  // const [endDate, setEndDate] = useState(null);
+  const [departureAirport, setDepartureAirport] = useState(null);
+  const [arrivalAirport, setArrivalAirport] = useState(null);
+  // const [chosenCity, setChosenCity] = useState(null);
+
+  /////
 
   // If any changes to flights at all, app will call this function inside of useEffect
   // Get flights data from server
@@ -28,36 +35,26 @@ function Flights({ setFlightAirport, setFlightDates }) {
     getFlights();
   }, [flights]);
 
-  ///// ?
-  // const onButtonClick = (airport, date) => {
-  //   console.log("airport = ", airport);
-  //   console.log("date = ", date);
+  const handleDeparture = (e) => {
+    console.log("from =", e.target.value);
+    setDepartureAirport(e.target.value);
+  };
 
-  //   setFlightAirport(airport);
-  //   setFlightDates(date);
-  // };
+  const handleArrival = (e) => {
+    console.log("to =", e.target.value);
+    setArrivalAirport(e.target.value);
+  };
 
   const flyDate = ["20th January 2022", "15th June 2022"];
 
-  const defaultarrivalDestinations = [
-    "London Stansted",
-    "Berlin Brandenburg",
-    "Indira Ghandi International",
-    "Munich International",
-    "Goa International",
-    "Ezeiza International",
-    "El Calafate",
-    "Ljubljana Jože Pučnik",
-  ];
-
+  ///////////
+  // ARRIVALS
+  // Get all possible destination flights
   const allArrivalDestinations = (flights || []).reduce((dests, flight) => {
-    // console.log("dest =", dests);
-    // console.log("flight =", flight);
     return [...dests, ...flight.airport_destinations];
   }, []);
-  // console.log("arrivalDestinations =", arrivalDestinations);
-  // console.log("flights =", flights);
 
+  // Filter through, ensure no repeats, and sort into alphabetical order
   const allArrivalDestinationsList = allArrivalDestinations
     .map((desti) => desti.name)
     .reduce(
@@ -65,9 +62,9 @@ function Flights({ setFlightAirport, setFlightDates }) {
       []
     )
     .sort();
-  console.log("allArrivalDestinationsList =", allArrivalDestinationsList);
 
-  let outboundOptions = allArrivalDestinationsList.map((item) => (
+  // Map through and provide dropdown option for each arrival destination
+  let arrivalOptions = allArrivalDestinationsList.map((item) => (
     <option key={item}>{item}</option>
   ));
 
@@ -84,30 +81,17 @@ function Flights({ setFlightAirport, setFlightDates }) {
           <div className="flight-background-box">
             <form className="parking-form">
               <label>Flying from:</label>
-              <select name="parkingselectList" className="parkingSelectList">
-                <option value="option 1">Vienna</option>
-                <option value="option 2">Malaga</option>
-                <option value="option 3">
-                  José María Córdova International
-                </option>
-                <option value="option 4">Stockholm Arlanda</option>
-                <option value="option 5">Hong Kong International</option>
-                <option value="option 6">Seville</option>
-                <option value="option 7">Birmingham International</option>
-                <option value="option 8">Manchester</option>
-                <option value="option 9">Rafael Núñez International</option>
-              </select>
+              <select onChange={handleDeparture}>{arrivalOptions}</select>
 
               <label>Flying to:</label>
-              <select>{outboundOptions}</select>
+              <select onChange={handleArrival}>{arrivalOptions}</select>
             </form>
 
             <TravelCalendar />
             <p>
               You're going away from {flyDate[0]} to {flyDate[1]}, and
-              travelling to{" "}
-              {defaultarrivalDestinations[Math.floor(Math.random() * 8)]}
-              Airport
+              travelling from
+              {departureAirport} Airport to {arrivalAirport} airport
             </p>
             <input
               type="submit"
@@ -148,15 +132,65 @@ export default Flights;
 //   );
 // };
 
-////////////
+///// ?
+// const onButtonClick = (airport, date) => {
+//   console.log("airport = ", airport);
+//   console.log("date = ", date);
 
-/* <select name="parkingselectList" className="parkingSelectList">
-<option value="option 1">{defaultarrivalDestinations[0]}</option>
-<option value="option 2">{defaultarrivalDestinations[1]}</option>
-<option value="option 3">{defaultarrivalDestinations[2]}</option>
-<option value="option 4">{defaultarrivalDestinations[3]}</option>
-<option value="option 5">{defaultarrivalDestinations[4]}</option>
-<option value="option 6">{defaultarrivalDestinations[5]}</option>
-<option value="option 7">{defaultarrivalDestinations[6]}</option>
-<option value="option 8">{defaultarrivalDestinations[7]}</option>
-</select> */
+//   setFlightAirport(airport);
+//   setFlightDates(date);
+// };
+
+/////////
+// DEPARTURES
+// Get all origin airport names
+// let depFlightList = [];
+// const allDepartureDestinations = (flights || []).reduce((dests, flight) => {
+//   // depFlightList.push(flight.airport_name);
+//   return [...dests, ...flight.airport_name];
+// }, []);
+
+///////
+
+// console.log("obj =", Object.values(flights));
+// const originFlights = Object.values(flights);
+// // const mapOrig = originFlights.reduce()
+// console.log("orig = ", typeof originFlights);
+
+// const originFlights = Object.values(flights);
+// console.log(originFlights.map((val) => val.airport_name));
+
+//////
+
+// const allDepartureDestinations = (flights || []).reduce((dests, flight) => {
+//   depFlightList.push(flight.airport_name);
+//   return [...dests, ...flight.airport_name];
+// }, []);
+
+// console.log("allDep =", allDepartureDestinationsList);
+// console.log("dep =", depFlightList);
+
+// Filter through, ensure no repeats, and sort into alphabetical order
+// const allDepartureDestinationsList = depFlightList
+//   .map((desti) => desti.name)
+//   .reduce(
+//     (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
+//     []
+//   )
+//   .sort();
+
+// // Map through and provide dropdown option for each arrival destination
+// let departureOptions = allDepartureDestinationsList.map((item) => (
+//   <option key={item}>{item}</option>
+// ));
+// console.log("departure options = ", departureOptions);
+/////////
+
+/* <p>
+You're going away from {flyDate[0]} to {flyDate[1]}, and
+travelling to
+{arrivalOptions[Math.floor(Math.random() * 8)]}
+Airport
+</p> */
+
+///////////

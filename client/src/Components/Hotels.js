@@ -10,6 +10,12 @@ import "../Styles/Hotel.css";
 ////////////////////////////////////////////////
 
 const Hotels = () => {
+  // const [startDate] = useState("");
+  // const [endDate] = useState("");
+  // const [chosenCity] = useState("");
+  // const [chosenHotel, setChosenHotel] = useState("");
+
+  /////////
   // const [date, setDate] = useState(new Date());
   // const onChange = (date) => setDate(date);
 
