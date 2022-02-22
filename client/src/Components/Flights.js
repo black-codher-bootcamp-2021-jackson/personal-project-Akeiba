@@ -19,7 +19,7 @@ function Flights() {
   // const [endDate, setEndDate] = useState(null);
   const [departureAirport, setDepartureAirport] = useState(null);
   const [arrivalAirport, setArrivalAirport] = useState(null);
-  // const [chosenCity, setChosenCity] = useState(null);
+  const [chosenCity, setChosenCity] = useState("");
 
   /////
 
@@ -44,9 +44,23 @@ function Flights() {
 
   // Store value of selected arrival dropdown item
   const handleArrival = (e) => {
-    console.log("to =", e.target.value);
+    const pickAirport = e.target.value;
+    let pickCity = "";
+
+    for (let i = 0; i < allArrivalDestinations.length; i++) {
+      // Will need to consider regex at a later stage for accented letters
+      if (allArrivalDestinations[i].name === pickAirport) {
+        pickCity = allArrivalDestinations[i].city;
+        break;
+      }
+    }
+
+    console.log("pick city =", pickCity);
+    setChosenCity(pickCity);
     setArrivalAirport(e.target.value);
   };
+
+  ///
 
   const flyDate = ["20th January 2022", "15th June 2022"];
 

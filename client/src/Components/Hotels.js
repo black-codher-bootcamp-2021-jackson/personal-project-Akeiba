@@ -13,6 +13,7 @@ import "../Styles/Hotel.css";
 const Hotels = () => {
   const [hotels, setHotels] = useState("");
   const [chosenHotel, setChosenHotel] = useState("");
+  const [chosenCity, setChosenCity] = useState(null);
 
   // If any changes to flights at all, app will call this function inside of useEffect
   // Get flights data from server
@@ -46,6 +47,8 @@ const Hotels = () => {
     setChosenHotel(e.target.value);
   };
 
+  const pickedCity = chosenCity;
+  console.log("picked =", pickedCity);
   /////////
   // const [date, setDate] = useState(new Date());
   // const onChange = (date) => setDate(date);
@@ -60,6 +63,7 @@ const Hotels = () => {
           <div className="hotels-page">
             <div className="hotel-background-box">
               <TravelCalendar />
+              <p>Chosen City: ${chosenCity}</p>
 
               <form className="hotels-form">
                 <label>Hotels:</label>
