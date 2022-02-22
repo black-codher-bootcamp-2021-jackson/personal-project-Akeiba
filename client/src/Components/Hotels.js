@@ -27,16 +27,6 @@ const Hotels = ({ chosenCity }) => {
     getHotels();
   }, [hotels]);
 
-  // // Get the names of all hotels in database
-  // const allHotelOptions = (hotels || []).reduce((venues, hotel) => {
-  //   return [...venues, hotel.hotel_name];
-  // }, []);
-
-  // // Filter through, ensure no repeats, and sort into alphabetical order
-  // const allHotelOptionsList = allHotelOptions
-  //   .filter((item, index) => allHotelOptions.indexOf(item) === index)
-  //   .sort();
-
   // Initialise empty array for city related hotels
   const cityHotelsList = [];
 
@@ -49,6 +39,7 @@ const Hotels = ({ chosenCity }) => {
     }
   }
 
+  // Remove duplicates from hotel list
   const cityHotelsFiltered = cityHotelsList.reduce(
     (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
     []
@@ -79,10 +70,9 @@ const Hotels = ({ chosenCity }) => {
           <div className="hotels-page">
             <div className="hotel-background-box">
               <TravelCalendar />
-              <p>Chosen City: {chosenCity}</p>
 
               <form className="hotels-form">
-                <label>Hotels:</label>
+                <label>Hotels in {chosenCity}:</label>
                 <select onChange={handleHotel}>{hotelOptions}</select>
                 <input
                   type="submit"

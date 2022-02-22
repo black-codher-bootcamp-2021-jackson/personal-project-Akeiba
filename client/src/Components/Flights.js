@@ -11,15 +11,14 @@ import "../Styles/Flights.css";
 ////////////////////////////////////////////////
 
 // Function
-function Flights({ setChosenCity }) {
+function Flights({ setChosenCity, departureAirport, setDepartureAirport }) {
   // { setFlightAirport, setFlightDates }
   // Flights state change
   const [flights, setFlights] = useState(null);
   // const [startDate, setStartDate] = useState(null);
   // const [endDate, setEndDate] = useState(null);
-  const [departureAirport, setDepartureAirport] = useState(null);
+  // const [departureAirport, setDepartureAirport] = useState(null);
   const [arrivalAirport, setArrivalAirport] = useState(null);
-  // const [setChosenCity] = useState("");
 
   /////
 
@@ -47,6 +46,7 @@ function Flights({ setChosenCity }) {
     const pickAirport = e.target.value;
     let pickCity = "";
 
+    // Find corresponding city to arrival airport
     for (let i = 0; i < allArrivalDestinations.length; i++) {
       // Will need to consider regex at a later stage for accented letters
       if (allArrivalDestinations[i].name === pickAirport) {
