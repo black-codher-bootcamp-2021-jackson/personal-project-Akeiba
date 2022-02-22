@@ -11,7 +11,7 @@ import "../Styles/Flights.css";
 ////////////////////////////////////////////////
 
 // Function
-function Flights() {
+function Flights({ setChosenCity }) {
   // { setFlightAirport, setFlightDates }
   // Flights state change
   const [flights, setFlights] = useState(null);
@@ -19,7 +19,7 @@ function Flights() {
   // const [endDate, setEndDate] = useState(null);
   const [departureAirport, setDepartureAirport] = useState(null);
   const [arrivalAirport, setArrivalAirport] = useState(null);
-  const [chosenCity, setChosenCity] = useState("");
+  // const [setChosenCity] = useState("");
 
   /////
 

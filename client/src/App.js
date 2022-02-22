@@ -26,7 +26,6 @@ function App() {
   const [departureAirport, setDepartureAirport] = useState("");
   const [arrivalAirport, setArrivalAirport] = useState("");
   const [chosenCity, setChosenCity] = useState("");
-  // const [flightDates, setFlightDates] = useState("");
 
   // Hotels state
   // const [hotelCity, setHotelCity] = useState("");
@@ -99,7 +98,6 @@ function App() {
                 setDepartureAirport={setDepartureAirport}
                 arrivalAirport={arrivalAirport}
                 setArrivalAirport={setArrivalAirport}
-                chosenCity={chosenCity}
                 setChosenCity={setChosenCity}
               />
             </>
@@ -115,6 +113,7 @@ function App() {
                 startDate={startDate}
                 endDate={endDate}
                 chosenCity={chosenCity}
+                setChosenCity={setChosenCity}
                 chosenHotel={chosenHotel}
                 setChosenHotel={setChosenHotel}
               />

@@ -10,10 +10,9 @@ import "../Styles/Hotel.css";
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
-const Hotels = () => {
+const Hotels = ({ chosenCity }) => {
   const [hotels, setHotels] = useState("");
   const [chosenHotel, setChosenHotel] = useState("");
-  const [chosenCity, setChosenCity] = useState(null);
 
   // If any changes to flights at all, app will call this function inside of useEffect
   // Get flights data from server
@@ -28,17 +27,36 @@ const Hotels = () => {
     getHotels();
   }, [hotels]);
 
-  const allHotelOptions = (hotels || []).reduce((venues, hotel) => {
-    return [...venues, hotel.hotel_name];
-  }, []);
+  // // Get the names of all hotels in database
+  // const allHotelOptions = (hotels || []).reduce((venues, hotel) => {
+  //   return [...venues, hotel.hotel_name];
+  // }, []);
 
   // // Filter through, ensure no repeats, and sort into alphabetical order
-  const allHotelOptionsList = allHotelOptions
-    .filter((item, index) => allHotelOptions.indexOf(item) === index)
-    .sort();
+  // const allHotelOptionsList = allHotelOptions
+  //   .filter((item, index) => allHotelOptions.indexOf(item) === index)
+  //   .sort();
+
+  // Initialise empty array for city related hotels
+  const cityHotelsList = [];
+
+  // Filter to only get correct city hotels
+  for (let i = 0; i < hotels.length; i++) {
+    // Will need to consider regex at a later stage for accented letters
+    if (hotels[i].city === chosenCity) {
+      console.log("here", hotels[i].hotel_name);
+      cityHotelsList.push(hotels[i].hotel_name);
+    }
+  }
+
+  const cityHotelsFiltered = cityHotelsList.reduce(
+    (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
+    []
+  );
+  console.log("city after = ", cityHotelsFiltered);
 
   // Map through and provide dropdown option for each arrival destination
-  let hotelOptions = allHotelOptionsList.map((item) => (
+  let hotelOptions = cityHotelsFiltered.map((item) => (
     <option key={item}>{item}</option>
   ));
 
@@ -47,8 +65,6 @@ const Hotels = () => {
     setChosenHotel(e.target.value);
   };
 
-  const pickedCity = chosenCity;
-  console.log("picked =", pickedCity);
   /////////
   // const [date, setDate] = useState(new Date());
   // const onChange = (date) => setDate(date);
@@ -63,7 +79,7 @@ const Hotels = () => {
           <div className="hotels-page">
             <div className="hotel-background-box">
               <TravelCalendar />
-              <p>Chosen City: ${chosenCity}</p>
+              <p>Chosen City: {chosenCity}</p>
 
               <form className="hotels-form">
                 <label>Hotels:</label>
