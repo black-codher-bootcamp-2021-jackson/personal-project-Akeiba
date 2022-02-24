@@ -49,7 +49,7 @@
   /* opacity: 100%; */
 }
 
-.flight-background-box {
+/* .flight-background-box {
   width: 50vw;
   height: 60vh;
   bottom: 10vh;
@@ -58,8 +58,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* opacity: 25%; */
-}
+  opacity: 25%;
+} */
 
 .parking-form {
   display: flex;

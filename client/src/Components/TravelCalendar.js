@@ -12,8 +12,8 @@ function TravelCalendar() {
   const [endDate, setEndDate] = useState("");
 
   const onChange = (date) => {
-    console.log("date 1 = ", date[0]);
-    console.log("date 2 = ", date[1]);
+    // console.log("date 1 = ", date[0]);
+    // console.log("date 2 = ", date[1]);
     setDate(date);
     setStartDate(date[0]);
     setEndDate(date[1]);

@@ -64,9 +64,7 @@ const Parking = ({ departureAirport }) => {
                   value="Pack into my Suitcase!"
                   // onChange={handleSelectedAirport}
                 ></input>
-                <p>
-                  You selected <span></span>
-                </p>
+                <p></p>
               </form>
             </div>
           </div>
@@ -78,51 +76,4 @@ const Parking = ({ departureAirport }) => {
 
 export default Parking;
 
-// import { useState } from "react";
-// import Calendar from "react-calendar";
-// import "react-calendar/dist/Calendar.css";
-
-// function TravelCalendar() {
-//   const [value, onChange] = useState(new Date());
-
-// return (
-//   <div className="calendar">
-//     <h1 className="calendar-title">Travel Calendar</h1>
-
-//     <div>
-//       <Calendar onChange={onChange} value={value} />
-//     </div>
-//   </div>
-// );
-// }
-
-/* <div className="parking-dropdown">
-<form className="parking-form">
-  <label>
-    I'll be parking at: <br></br>
-  </label>
-  <select name="parkingselectList" className="parkingSelectList">
-    <option value="option 1">London Stansted</option>
-    <option value="option 2">Indira Ghandi International</option>
-    <option value="option 3">
-      José María Córdova International
-    </option>
-    <option value="option 4">Ljubljana Jože Pučnik</option>
-    <option value="option 5">Hong Kong International</option>
-    <option value="option 6">Seville</option>
-    <option value="option 7">Birmingham International</option>
-    <option value="option 8">Manchester</option>
-    <option value="option 9">Rafael Núñez International</option>
-  </select>
-  <br></br>
-  <input
-    type="submit"
-    className="submit-btn"
-    value="Pack into my Suitcase!"
-    onChange={handleSelectedAirport}
-  ></input>
-  <p>
-    You selected <span></span>
-  </p>
-</form>
-</div> */
+/* You selected <span></span> */

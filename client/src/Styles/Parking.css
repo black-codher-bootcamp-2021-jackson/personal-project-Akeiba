@@ -45,7 +45,7 @@
   flex-direction: column;
 }
 
-.parking-background-box {
+/* .parking-background-box {
   width: 50vw;
   height: 60vh;
   bottom: 10vh;
@@ -54,5 +54,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* opacity: 25%; */
-}
+  opacity: 25%;
+} */

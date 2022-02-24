@@ -75,7 +75,10 @@ function App() {
               <Suitcase
                 startDate={startDate}
                 endDate={endDate}
+                departureAirport={departureAirport}
+                arrivalAirport={arrivalAirport}
                 chosenHotel={chosenHotel}
+                chosenCity={chosenCity}
                 chosenParking={chosenParking}
               />
             </>

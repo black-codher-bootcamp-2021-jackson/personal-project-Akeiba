@@ -19,10 +19,6 @@ const NavBar = () => {
               Home
             </Link>
 
-            <Link to="/Menu" className="nav-link">
-              Menu
-            </Link>
-
             <Link to="/Passport" className="nav-link">
               Passport
             </Link>
@@ -52,3 +48,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+/* <Link to="/Menu" className="nav-link">
+Menu
+</Link> */
