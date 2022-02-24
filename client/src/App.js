@@ -116,7 +116,6 @@ function App() {
                 startDate={startDate}
                 endDate={endDate}
                 chosenCity={chosenCity}
-                setChosenCity={setChosenCity}
                 chosenHotel={chosenHotel}
                 setChosenHotel={setChosenHotel}
               />

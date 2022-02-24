@@ -11,8 +11,8 @@ import "../Styles/Suitcase.css";
 
 // Will change, need links to load primarily
 const Suitcase = ({
-  startDate,
-  endDate,
+  // startDate,
+  // endDate,
   departureAirport,
   arrivalAirport,
   chosenHotel,
@@ -28,10 +28,12 @@ const Suitcase = ({
             <h1 className="suitcase-header">Suitcase</h1>
             <div>
               <p>
-                startDate={startDate}, endDate={endDate}, departureAirport=
-                {departureAirport}, arrivalAirport={arrivalAirport},
-                chosenHotel={chosenHotel}, chosenCity={chosenCity},
-                chosenParking={chosenParking},
+                Your journey starts at {departureAirport} Airport, where you'll
+                be parking in the {chosenParking}
+                <br></br>
+                Then you'll be flying out to {arrivalAirport} Airport. Once
+                you've arrive, you'll spend your days exploring {chosenCity},
+                and staying at{chosenHotel}.
               </p>
             </div>
           </div>
@@ -42,3 +44,12 @@ const Suitcase = ({
 };
 
 export default Suitcase;
+
+// startDate={startDate}, endDate={endDate},
+
+/* <p>
+departureAirport=
+{departureAirport}, arrivalAirport={arrivalAirport},
+chosenHotel={chosenHotel}, chosenCity={chosenCity},
+chosenParking={chosenParking},
+</p> */

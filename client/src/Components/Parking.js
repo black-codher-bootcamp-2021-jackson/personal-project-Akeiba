@@ -11,23 +11,15 @@ import "../Styles/Parking.css";
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
-const Parking = ({ departureAirport }) => {
-  // const [startDate] = useState("");
-  // const [endDate] = useState("");
-  // const [departureAirport] = useState("");
-  // const [chosenParking, setChosenParking] = useState("");
-
-  /////////////////
-  // // Dropdown parking state
-  // const [selectedAirport, setSelectedAirport] = useState("");
-  // const handleSelectedAirport = (e) => {
-  //   e.preventdefault();
-  //   console.log("you've chosen =", e.target.value);
-  //   setSelectedAirport(e.target.value);
-  // };
-
+const Parking = ({ departureAirport, setChosenParking }) => {
   // This needs to to be calculated from calendar picked dates
   const parkingNoDays = 5;
+
+  // Store value of selected parking dropdown item
+  const handleParking = (e) => {
+    console.log("parking val =", e.target.value);
+    setChosenParking(e.target.value);
+  };
 
   return (
     <>
@@ -43,17 +35,25 @@ const Parking = ({ departureAirport }) => {
                   {parkingNoDays} days:
                 </p>
                 <label>Select Parking Type</label>
-                <select name="parkingselectList" className="parkingSelectList">
+                <select
+                  onChange={handleParking}
+                  name="parkingselectList"
+                  className="parkingSelectList"
+                >
                   Parking Type
-                  <option value="option 1">
+                  <option value="Terminal Valet Parking Zone">
                     Terminal Valet Parking - £159.99
                   </option>
-                  <option value="option 2">Mid Stay Green Zone - £99.99</option>
-                  <option value="option 3">
+                  <option value="Mid Stay Green Zone">
+                    Mid Stay Green Zone - £99.99
+                  </option>
+                  <option value="Mid Stay Purple Zone">
                     Mid Stay Purple Zone - £69.99
                   </option>
-                  <option value="option 4">Long Stay Red Zone - £57.00</option>
-                  <option value="option 5">
+                  <option value="Long Stay Red Zone">
+                    Long Stay Red Zone - £57.00
+                  </option>
+                  <option value="Short Stay Yellow Zone">
                     Short Stay Yellow Zone - £75.99
                   </option>
                 </select>

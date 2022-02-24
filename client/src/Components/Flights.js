@@ -11,10 +11,15 @@ import "../Styles/Flights.css";
 ////////////////////////////////////////////////
 
 // Function
-function Flights({ setChosenCity, departureAirport, setDepartureAirport }) {
+function Flights({
+  setChosenCity,
+  departureAirport,
+  setDepartureAirport,
+  arrivalAirport,
+  setArrivalAirport,
+}) {
   // Flights state change
   const [flights, setFlights] = useState(null);
-  const [arrivalAirport, setArrivalAirport] = useState(null);
 
   /////
 

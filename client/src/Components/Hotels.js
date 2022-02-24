@@ -10,9 +10,8 @@ import "../Styles/Hotel.css";
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
-const Hotels = ({ chosenCity }) => {
+const Hotels = ({ chosenCity, chosenHotel, setChosenHotel }) => {
   const [hotels, setHotels] = useState("");
-  const [chosenHotel, setChosenHotel] = useState("");
 
   // If any changes to flights at all, app will call this function inside of useEffect
   // Get flights data from server
@@ -53,6 +52,8 @@ const Hotels = ({ chosenCity }) => {
 
   // Store value of selected hotel dropdown item
   const handleHotel = (e) => {
+    console.log("hotels chosen = ", e.target.value);
+    // setChosenHotel(e.target.value);
     setChosenHotel(e.target.value);
   };
 
