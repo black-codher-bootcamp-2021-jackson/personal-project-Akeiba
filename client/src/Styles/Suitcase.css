@@ -47,3 +47,25 @@
   /* opacity: 100%; */
   /* align-items: center; */
 }
+
+.suitcase-background-box {
+  width: 50vw;
+  height: 100%;
+  bottom: 10vh;
+  /* background-color: #6c7775; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 100%;
+}
+
+.suitcase-p {
+  font-size: 30px;
+}
+
+.selection {
+  text-decoration: wavy;
+  color: #b5bfc4;
+}

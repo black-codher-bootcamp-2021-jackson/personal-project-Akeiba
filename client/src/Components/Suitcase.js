@@ -25,15 +25,24 @@ const Suitcase = ({
       <div className="suitcase-underlay">
         <div className="suitcase-page">
           <div className="suitcase-page">
-            <h1 className="suitcase-header">Suitcase</h1>
-            <div>
-              <p>
-                Your journey starts at {departureAirport} Airport, where you'll
-                be parking in the {chosenParking}
+            <div className="suitcase-background-box">
+              <p className="suitcase-p">
+                Your journey starts at{" "}
+                <span className="selection">{departureAirport}</span> Airport,
                 <br></br>
-                Then you'll be flying out to {arrivalAirport} Airport. Once
-                you've arrive, you'll spend your days exploring {chosenCity},
-                and staying at{chosenHotel}.
+                <br></br>
+                You'll be parking in their
+                <span className="selection">{chosenParking}</span>.<br></br>
+                <br></br>
+                Next you'll be flying out to
+                <span className="selection">{arrivalAirport}</span> Airport.
+                <br></br>
+                <br></br>
+                Once you've arrived, you'll spend your days exploring
+                <span className="selection">{chosenCity}</span>,<br></br>
+                <br></br>
+                and spending your nights at
+                <span className="selection">{chosenHotel}</span>.
               </p>
             </div>
           </div>
