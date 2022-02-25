@@ -13,7 +13,7 @@ import "../Styles/Parking.css";
 
 const Parking = ({ departureAirport, setChosenParking }) => {
   // This needs to to be calculated from calendar picked dates
-  const parkingNoDays = 5;
+  // const parkingNoDays = 5;
 
   // Store value of selected parking dropdown item
   const handleParking = (e) => {
@@ -30,17 +30,14 @@ const Parking = ({ departureAirport, setChosenParking }) => {
             <TravelCalendar />
             <div className="parking-dropdown">
               <form className="parking-form">
-                <p>
-                  You'll be parking at {departureAirport} Airport for
-                  {parkingNoDays} days:
-                </p>
+                <p>You'll be parking at {departureAirport} Airport:</p>
                 <label>Select Parking Type</label>
                 <select
                   onChange={handleParking}
                   name="parkingselectList"
                   className="parkingSelectList"
                 >
-                  Parking Type
+                  Parking Type <br></br>
                   <option value="Terminal Valet Parking Zone">
                     Terminal Valet Parking - £159.99
                   </option>
@@ -57,6 +54,7 @@ const Parking = ({ departureAirport, setChosenParking }) => {
                     Short Stay Yellow Zone - £75.99
                   </option>
                 </select>
+                <br></br>
                 <br></br>
                 <input
                   type="submit"

@@ -114,7 +114,7 @@ function Flights({
       <div className="flight-underlay">
         <div className="flight-page">
           <div className="flight-background-box">
-            <form className="parking-form">
+            <form className="flight-form">
               <label>Flying from:</label>
               <select onChange={handleDeparture}>{departureOptions}</select>
 

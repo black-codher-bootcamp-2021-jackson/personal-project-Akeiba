@@ -74,7 +74,9 @@ const Hotels = ({ chosenCity, chosenHotel, setChosenHotel }) => {
 
               <form className="hotels-form">
                 <label>Hotels in {chosenCity}:</label>
+                <br></br>
                 <select onChange={handleHotel}>{hotelOptions}</select>
+                <br></br>
                 <input
                   type="submit"
                   className="submit-btn"
