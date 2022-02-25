@@ -11,7 +11,15 @@ const Home = () => {
       <NavBar />
       <div className="home-underlay">
         <div className="home-page">
-          <h1 className="home-header">Home</h1>
+          <div className="home-background-box">
+            <p className="suitcase-p">
+              Looking to travel with the same effort as booking a package
+              holiday, without the restrictions?
+              <br></br>
+              <br></br>
+              You've come to the right place, let's get started...
+            </p>
+          </div>
         </div>
       </div>
     </>
