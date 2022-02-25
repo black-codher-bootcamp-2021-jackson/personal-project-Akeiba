@@ -1,3 +1,7 @@
 .travel-calendar-section {
   z-index: 100;
 }
+
+.text-center {
+  font-size: 16px;
+}

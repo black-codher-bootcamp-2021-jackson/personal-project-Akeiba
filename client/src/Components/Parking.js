@@ -27,10 +27,10 @@ const Parking = ({ departureAirport, setChosenParking }) => {
       <div className="parking-underlay">
         <div className="parking-page">
           <div className="parking-background-box">
+            <p>You'll be parking at {departureAirport} Airport:</p>
             <TravelCalendar />
             <div className="parking-dropdown">
               <form className="parking-form">
-                <p>You'll be parking at {departureAirport} Airport:</p>
                 <label>Select Parking Type</label>
                 <select
                   onChange={handleParking}
@@ -54,7 +54,6 @@ const Parking = ({ departureAirport, setChosenParking }) => {
                     Short Stay Yellow Zone - £75.99
                   </option>
                 </select>
-                <br></br>
                 <br></br>
                 <input
                   type="submit"

@@ -47,7 +47,7 @@ const Passport = () => {
           {userAccounts && userAccounts.length > 0 ? (
             userAccounts.map((userAccount) => renderUserAccount(userAccount))
           ) : (
-            <p>There aren't any user accounts 😭</p>
+            <p></p>
           )}
         </ul>
 
@@ -84,14 +84,6 @@ const Passport = () => {
                 ></input>
               </label>
 
-              <label htmlFor="passportLoginUsername" className="passport-label">
-                <input
-                  type="submit"
-                  className="submit-btn"
-                  value="Let's go!"
-                ></input>
-              </label>
-
               <label htmlFor="passportLoginCountry" className="passport-label">
                 Country
                 <input
@@ -99,6 +91,14 @@ const Passport = () => {
                   type="text"
                   className="passport-login-input"
                   placeholder="Add your country"
+                ></input>
+              </label>
+
+              <label htmlFor="passportLoginUsername" className="passport-label">
+                <input
+                  type="submit"
+                  className="submit-btn"
+                  value="Let's go!"
                 ></input>
               </label>
             </form>

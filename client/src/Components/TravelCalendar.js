@@ -26,10 +26,10 @@ function TravelCalendar() {
       </div>
       {date.length > 0 ? (
         <p className="text-center">
-          <span className="bold">Start:</span>
+          <span className="date-p">Start:</span>
           {startDate.toString().slice(0, 15)}
           &nbsp;|&nbsp;
-          <span className="bold">End:</span> {endDate.toString().slice(0, 15)}
+          <span className="date-p">End:</span> {endDate.toString().slice(0, 15)}
         </p>
       ) : (
         <p className="text-center"></p>
